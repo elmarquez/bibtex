@@ -1,36 +1,33 @@
-/*
-	Created at: 28 Sep 2018, Fri
-*/
-
 const bibtex = require("../index");
+const path = require('path');
 
 const bib = new bibtex();
+const cwd = process.cwd();
 
-/* NOTE:
-	+ Path should be related to the location from where we're running the command.
+describe('bibtex', function () {
 
-	+ As we supposed to execute this from the root of the package.
+  describe('load from file', function() {
 
-	+ That is why `.\\docs\\examples\\BibTeX_example02_misc.bib` is correct
-	
-	+ not `..\\docs\\examples\\BibTeX_example02_misc.bib`.
-*/
+    it('should return a bibtext object from an existing file', function () {
+      // Bib file path (Absoulte/Relative)
+      // './docs/examples/BibTeX_example02_misc.bib'
+      // '.\\docs\\examples\\BibTeX_example02_misc.bib' also works fine in Windows
 
-// Bib file path (Absoulte/Relative)
-// './docs/examples/BibTeX_example02_misc.bib'
-// '.\\docs\\examples\\BibTeX_example02_misc.bib' also works fine in Windows
+      /* EXAMPLE 1*/
+      const bibObject = bib.getBibFromFile('./docs/examples/BibTeX_example02_misc.bib');
+      console.log(JSON.stringify(bibObject, null, 4));
+      console.log('\n');
 
-/* EXAMPLE 1*/
-const bibObject = bib.getBibAsObject('./docs/examples/BibTeX_example02_misc.bib');
-// const  = bib.getBibMetaData('.\\docs\\examples\\BibTeX_example02_misc.bib');
-console.log(JSON.stringify(bibObject, null, 4));
-console.log('\n');
+      /* EXAMPLE 2*/
+      const bibObject2 = bib.getBibFromFile('./docs/examples/BibTeX_example08_book_diff.bib');
+      console.log(JSON.stringify(bibObject2, null, 4));
+      console.log('\n');
 
-/* EXAMPLE 2*/
-const bibObject2 = bib.getBibAsObject('./docs/examples/BibTeX_example08_book_diff.bib');
-console.log(JSON.stringify(bibObject2, null, 4));
-console.log('\n');
+      /* EXAMPLE 3*/
+      const bibArr = bib.getBibFromFile('./docs/examples/BibTeX_multiple.bib');
+      console.log(JSON.stringify(bibArr, null, 4));
 
-/* EXAMPLE 3*/
-const bibArr = bib.getBibAsObject('./docs/examples/BibTeX_multiple.bib');
-console.log(JSON.stringify(bibArr, null, 4));
+    });
+
+  });
+});

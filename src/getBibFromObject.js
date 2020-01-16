@@ -1,32 +1,4 @@
-/*
-	Coded on: 1 Oct 2018, Tue
-	Updated on: 4 Oct 2018, Thu
-*/
-const fs = require("fs"); // File system module
-
-// Method which accepts the bib file path (absolute/relative) 
-// Reads the bib file and creates an array of bib objects
-// It calls getBibObj() and passes a string parameter(a single bib entry in bib file)
-// Finally returns an array of bib objects
-module.exports = function getBibAsObject(bibFilePath) {
-
-	// console.log(fs.existsSync(bibFilePath));
-	// console.log(process.cwd());
-	// console.log('PATHS:-', bibFilePath);
-	if(!((typeof bibFilePath === 'string') && /.+\.bib$/gi.test(bibFilePath))) {
-		console.log("Bad path: " + bibFilePath);
-		console.log('File format (name/extension) is bad, a bib file should end with .bib');
-		return null;
-	}
-
-	if(!fs.existsSync(bibFilePath)){
-		console.log("Path: " + bibFilePath + " does not exist");
-		return null;
-	};
-
-	// console.log("Path " + bibFilePath + "exists");
-	let data = fs.readFileSync(bibFilePath, 'utf-8');
-	// console.log(data);
+module.exports = function getBibFromObject(data) {
 
 	data =  data.trim();
 
@@ -45,7 +17,7 @@ module.exports = function getBibAsObject(bibFilePath) {
 	for(let i=0; i < arr.length; i++) {
 		let obj = getBibObj(arr[i]);
 
-		if(obj !== null) {
+		if (obj !== null) {
 			objs.push(obj);
 		} else {
 			console.log('Please correct your BibTeX syntax as mentioned then try' +
