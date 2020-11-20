@@ -1,16 +1,11 @@
-/*
-	Programmed on: 10 Oct 2018, Wed
-*/
-
 const bibtex = require("../index");
-
 const bib = new bibtex();
 
 // EXAMPLE 1
 // Bib entry
 const object = 	{
-			entryType: 'article', 
-			key: 'articleKey', 
+			entryType: 'article',
+			key: 'articleKey',
 			data: {
 				'author': 'Raghvendra Thakur',
 				'title': 'The final decision of an old monkey',

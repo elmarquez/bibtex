@@ -1,30 +1,15 @@
-<h1 id="top">bibtex</h1>
+BibTEX - Read, Write, Convert, and More
+=======================================
 
-![npm](https://img.shields.io/npm/dw/@hygull/bibtex.svg?label=downloads) ![npm (scoped)](https://img.shields.io/npm/v/@hygull/bibtex.svg?label=%40hygull%2Fbibtex)
-
-> ## `npm i @hygull/bibtex`
-
-A node/npm package to get details about BibTeX (.bib), its syntax, available ENTRY types and many more using Node APIs.
+A utility module for working with BibTeX (.bib) files.
 
 
-> You can also visit https://hygull.github.io/bibtex/ to see the beautiful documentation for the same.
+## Install
 
-![https://raw.githubusercontent.com/hygull/bibtex/master/docs/images/BibTeX.jpg](https://raw.githubusercontent.com/hygull/bibtex/master/docs/images/BibTeX.jpg)
+    npm install @elmarquez/bibtex
 
-## Installation
 
-> You can check https://docs.npmjs.com/getting-started/using-a-package.json for more commands.
-
-| Type   | Command |
-| --- | --- |
-| Local   | `npm i @hygull/bibtex` |
-| Global  | `npm i @hygull/bibtex -g` |
-
-<!-- If you want to try this package and getting started soon without any problems, please visit [https://hygull.github.io/bibtex-test/](https://hygull.github.io/bibtex-test/) and follow the steps mentioned. -->
-
-<hr>
-
-### What is BibTeX?
+## What is BibTeX?
 
 BibTeX is a reference management program that makes it easy for users of TeX and LaTeX to generate bibliographies for books and journal articles. When possible, it is usually stylized in the TeX font the way TeX and LaTeX are. LaTeX was first created in 1985 by Leslie Lamport and Oren Patashnik.
 

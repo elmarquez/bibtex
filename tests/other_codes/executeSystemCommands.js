@@ -1,6 +1,6 @@
 const execFile = require("child_process").execFile;
 /***********
-execFile() should not be used in a case where the external application 
+execFile() should not be used in a case where the external application
 generates a large amount of data.
 ***********/
 
@@ -11,10 +11,10 @@ const child = execFile('node', ['--version'], function(error, stdout, stderr){
 	} else {
 		// Standard output
 		if(stdout)
-			console.log("Statndard output: ", stdout);
-		
+			console.log("Standard output: ", stdout);
+
 		console.log(stderr === null); // false
-		console.log(stderr === undefined); // false 
+		console.log(stderr === undefined); // false
 		console.log(stderr === ""); // true
 
 		// Standard error
